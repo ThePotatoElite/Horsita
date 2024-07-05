@@ -26,11 +26,11 @@ public class FlyingEnemy : Enemy
         StopShooting();
     }
     
-    protected override void Update()
-    {
-        base.Update();
-        MovementBehavior();
-    }
+    //protected override void Update()
+    //{
+    //    base.Update();
+    //    MovementBehavior();
+    //}
 
     protected override void SetNewDestination()
     {
@@ -76,6 +76,8 @@ public class FlyingEnemy : Enemy
     protected virtual void StartShooting()
     {
         isShooting = true;
+
+        Debug.Log("Fire");
         // animator.SetBool("isShooting", true);
         StopMoving();
         Invoke(nameof(StopShooting), shootInterval);
