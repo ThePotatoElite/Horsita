@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameObject flyingEnemyPrefab;
     // [SerializeField] GameObject fireBallPrefab;
     [SerializeField] float flyingEnemyInterval = 3f; // FlyingEnemy Spawn Delay
-    [SerializeField] float timeBetweenWaves = 9f;
+    // [SerializeField] float timeBetweenWaves = 9f;
     private Transform _targetArea;
     private bool isSpawning = false;
 

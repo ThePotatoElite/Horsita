@@ -11,12 +11,12 @@ public class GameManager : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] TextMeshProUGUI coinText;
 
-    private void Start()
+    void Start()
     {
-        coinText.text = playerLiraAmount.ToString();
+        // coinText.text = playerLiraAmount.ToString();
     }
 
-    private void Awake()
+    void Awake()
     {
         if (instance == null)
         {
@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
-        coinText.text = playerLiraAmount.ToString();
+        // coinText.text = playerLiraAmount.ToString();
     }
 }

@@ -15,7 +15,29 @@ public class SussitaManager : MonoBehaviour
 
     void Update()
     {
+        HandleInput();
         ManageVelocity();
+    }
+    
+    void HandleInput()
+    {
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        {
+            OnGasPressed();
+        }
+        else if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
+        {
+            OnGasReleased();
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        {
+            OnBrakePressed();
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))
+        {
+            OnBrakeReleased();
+        }
     }
 
     public void OnGasPressed()
@@ -50,7 +72,6 @@ public class SussitaManager : MonoBehaviour
         {
             _velocity -= (_maxSpeed / decelerationTime) * Time.deltaTime;
         }
-
         _velocity = Mathf.Clamp(_velocity, 0, _maxSpeed);
         float velocityInMps = _velocity * 1000f / 3600f; // Convert velocity to m/s for Rigidbody
         Vector3 movement = transform.forward * velocityInMps;

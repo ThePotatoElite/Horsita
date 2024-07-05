@@ -25,6 +25,12 @@ public class FlyingEnemy : Enemy
         GameManager.instance.playerLiraAmount += 10; // Add 10 lira coins for each death
         StopShooting();
     }
+    
+    protected override void Update()
+    {
+        base.Update();
+        MovementBehavior();
+    }
 
     protected override void SetNewDestination()
     {

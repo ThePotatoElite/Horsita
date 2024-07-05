@@ -7,8 +7,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour, IDamageable
 {
     public static List<Enemy> LivingEnemies;
-
-
+    
     public float Health { get; set; }
     public float attackSpeed = 1f;
     public Vector3 wayPoint;
@@ -23,7 +22,6 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     [SerializeField] protected float maxHealth = 3f;
     [SerializeField] protected float maxDistance = 5f;
 
-
     protected virtual void Awake()
     {
         if(LivingEnemies == null)
@@ -33,6 +31,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
 
         LivingEnemies.Add(this);
     }
+    
     protected virtual void Start()
     {
         EnemySpawned();
@@ -78,7 +77,6 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         {
             SetNewDestination();
         }
-
         MovementBehavior();
     }
 
@@ -113,6 +111,4 @@ public abstract class Enemy : MonoBehaviour, IDamageable
 
         Destroy(gameObject);
     }
-
-
 }
