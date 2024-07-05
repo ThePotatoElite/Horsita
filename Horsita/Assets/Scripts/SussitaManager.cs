@@ -9,6 +9,9 @@ public class SussitaManager : MonoBehaviour
     private static float _velocity = 0f;
     private bool _isAccelerating = false;
     private bool _isBraking = false;
+    public static SussitaManager instance;
+    
+    public float Health { get; set; } = 100;
 
     void Update()
     {
@@ -58,5 +61,15 @@ public class SussitaManager : MonoBehaviour
     public float GetCurrentSpeed()
     {
         return _velocity;
+    }
+    
+    public void TakeDamage(float damageAmount)
+    {
+        Health -= damageAmount;
+        if (Health <= 0)
+        {
+            Debug.Log("Train is dead");
+        }
+        // UpdateHpBar();
     }
 }
