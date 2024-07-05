@@ -11,12 +11,7 @@ public class WaveManager : MonoBehaviour
     private float _lastSpawnTime;
     private float _roundTimeToSpawn = 10f;
 
-    public enum EnemyTypes
-    {
-        Flying
-    }
-
-    private void Start()
+    void Start()
     {
         GenerateEnemyWave(10);
     }

@@ -68,7 +68,7 @@ public class SussitaManager : MonoBehaviour
         Health -= damageAmount;
         if (Health <= 0)
         {
-            Debug.Log("Train is dead");
+            Debug.Log("Sussita is dead");
         }
         // UpdateHpBar();
     }

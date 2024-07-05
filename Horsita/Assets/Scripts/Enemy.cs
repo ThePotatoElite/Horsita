@@ -8,7 +8,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     public float attackSpeed = 1f;
     public Vector3 wayPoint;
 
-    protected Animator animator;
+    // protected Animator animator;
     protected GameObject Sussita;
     protected float AttackTimer = 0f;
     protected int Damage = 10;
@@ -23,7 +23,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         EnemySpawned();
         SetNewDestination();
         Sussita = GameObject.FindGameObjectWithTag("Player");
-        animator = GetComponent<Animator>();
+        // animator = GetComponent<Animator>();
     }
 
     protected virtual void SetNewDestination()

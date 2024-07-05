@@ -5,8 +5,8 @@ public class FlyingEnemy : Enemy
     protected bool isShooting = false;
     protected float stopTimer = 0f;
 
-    public GameObject fireBallPrefab;
-    public Transform fireBallStartPosition;
+    // public GameObject fireBallPrefab;
+    // public Transform fireBallStartPosition;
 
     private Transform _targetArea;
     [SerializeField] protected float shootInterval = 3f;
@@ -22,15 +22,15 @@ public class FlyingEnemy : Enemy
     protected override void OnDisable()
     {
         base.OnDisable();
-        GameManager.instance.playerLiraAmount += 10; // Add 10 coins for each death
+        GameManager.instance.playerLiraAmount += 10; // Add 10 lira coins for each death
         StopShooting();
     }
 
     protected override void SetNewDestination()
     {
-        float randomX = UnityEngine.Random.Range(-13.15f, 9.5f);
-        float randomZ = UnityEngine.Random.Range(-13.15f, 9.5f);
-        wayPoint = new Vector3(randomX, 0, randomZ);
+        float randomX = UnityEngine.Random.Range(-650f, 700f);
+        float randomY = UnityEngine.Random.Range(540f, 850f);
+        wayPoint = new Vector3(randomX, randomY, -90f);
     }
 
     protected override void MovementBehavior()
@@ -41,7 +41,7 @@ public class FlyingEnemy : Enemy
         }
     }
 
-    private void MoveAroundTargetArea()
+    void MoveAroundTargetArea()
     {
         transform.position = Vector3.MoveTowards(transform.position, wayPoint, speed * Time.deltaTime);
         if (stopTimer >= shootInterval)
@@ -55,35 +55,37 @@ public class FlyingEnemy : Enemy
         }
     }
 
-    private void StopMoving()
+    void StopMoving()
     {
         stopTimer = 3f;
         speed = 0f;
     }
 
-    private void ResumeMoving()
+    void ResumeMoving()
     {
-        speed = 2f;
+        speed = 100f;
         SetNewDestination();
     }
 
     protected virtual void StartShooting()
     {
         isShooting = true;
-        animator.SetBool("isShooting", true);
+        // animator.SetBool("isShooting", true);
         StopMoving();
         Invoke(nameof(StopShooting), shootInterval);
-        GameObject fireBallInstance = Instantiate(fireBallPrefab, fireBallStartPosition.position, Quaternion.identity);
-        fireBallInstance.GetComponent<FireballTravel>().Initialize(this);
+        // GameObject fireBallInstance = Instantiate(fireBallPrefab, fireBallStartPosition.position, Quaternion.identity);
+        // fireBallInstance.GetComponent<FireballTravel>().Initialize(this);
     }
 
     protected virtual void StopShooting()
     {
         isShooting = false;
+        /*
         if (animator != null)
         {
             animator.SetBool("isShooting", false);
         }
+        */
         ResumeMoving();
     }
 
@@ -99,12 +101,12 @@ public class FlyingEnemy : Enemy
             }
         }
     }
-
+    /*
     public void SetFireBall(GameObject fireBall)
     {
         fireBallPrefab = fireBall;
     }
-
+    */
     public void SetTargetArea(Transform target)
     {
         _targetArea = target;

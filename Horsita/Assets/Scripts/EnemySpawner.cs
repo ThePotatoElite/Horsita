@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
         FlyingEnemy flyingEnemyScript = newFlyingEnemy.GetComponent<FlyingEnemy>();
         if (flyingEnemyScript != null)
         {
-            flyingEnemyScript.SetFireBall(fireBallPrefab);
+            // flyingEnemyScript.SetFireBall(fireBallPrefab);
             flyingEnemyScript.SetTargetArea(_targetArea);
         }
     }

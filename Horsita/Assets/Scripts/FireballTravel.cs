@@ -29,7 +29,7 @@ public class FireballTravel : MonoBehaviour
         this.enemy = enemy;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
