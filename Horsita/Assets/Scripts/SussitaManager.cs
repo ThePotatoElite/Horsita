@@ -5,7 +5,7 @@ public class SussitaManager : MonoBehaviour
     [SerializeField] float accelerationTime = 7f; // (IRL Sussita can get to 100 km/h by 15 seconds)
     [SerializeField] float decelerationTime = 3f;
     [SerializeField] Rigidbody sussitaRb;
-    private readonly float _maxSpeed = 160f; // (Sussita can only reach 160 km/h)
+    [SerializeField] private float _maxSpeed = 160f; // (Sussita can only reach 160 km/h)
     private static float _velocity = 0f;
     private bool _isAccelerating = false;
     private bool _isBraking = false;
