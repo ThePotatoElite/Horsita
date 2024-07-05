@@ -4,23 +4,17 @@ using System;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-        public static EnemyBehaviour instance;
         public static Action<Enemy> enemySpawned;
         public static Action<Enemy> enemyDead;
         // Every time the number of enemies change,the EnemyManger calls an event to let everyone know
         public static Action<List<Enemy>> listOfEnemyChanged;
-        public List<Enemy> listOfEnemies = new List<Enemy>();
+        public static List<Enemy> listOfEnemies;
         
         void Awake()
         {
-            if (instance == null)
+            if (listOfEnemies == null)
             {
-                instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(this);
+                listOfEnemies = new List<Enemy>();
             }
         }
         void OnEnable()
