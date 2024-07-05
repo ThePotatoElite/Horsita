@@ -4,10 +4,11 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] GameObject flyingEnemyPrefab;
-    [SerializeField] GameObject fireBallPrefab;
-    [SerializeField] float flyingEnemyInterval = 3f;
+    // [SerializeField] GameObject fireBallPrefab;
+    [SerializeField] float flyingEnemyInterval = 3f; // FlyingEnemy Spawn Delay
     [SerializeField] float timeBetweenWaves = 9f;
     private Transform _targetArea;
+    private bool isSpawning = false;
 
     void Start()
     {
@@ -15,31 +16,30 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(SpawnEnemies());
     }
 
-    private IEnumerator SpawnEnemies()
+    IEnumerator SpawnEnemies()
     {
-        yield return new WaitForSeconds(flyingEnemyInterval);
-        int waveSize = 1;
         while (true)
         {
-            for (int i = 0; i < waveSize; i++)
+            if (!isSpawning)
             {
+                isSpawning = true;
                 SpawnFlyingEnemy();
             }
-            yield return new WaitForSeconds(timeBetweenWaves);
-            waveSize += 1;
+            yield return new WaitForSeconds(flyingEnemyInterval);
+            isSpawning = false;
         }
     }
 
     public void SpawnFlyingEnemy()
     {
-        Vector3 spawnPosition = new Vector3(Random.Range(-9.8f, 1f), Random.Range(5f, 6.7f), Random.Range(-9.8f, 1f));
+        Vector3 spawnPosition = new Vector3(Random.Range(-650f, 700f), Random.Range(540f, 850f), -90f);
         GameObject newFlyingEnemy = Instantiate(flyingEnemyPrefab, spawnPosition, Quaternion.identity);
-
         FlyingEnemy flyingEnemyScript = newFlyingEnemy.GetComponent<FlyingEnemy>();
         if (flyingEnemyScript != null)
         {
             // flyingEnemyScript.SetFireBall(fireBallPrefab);
             flyingEnemyScript.SetTargetArea(_targetArea);
+            // flyingEnemyScript.FireBallHitSussita(newFlyingEnemy);
         }
     }
 }
