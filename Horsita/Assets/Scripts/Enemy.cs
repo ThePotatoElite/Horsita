@@ -1,9 +1,14 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
 public abstract class Enemy : MonoBehaviour, IDamageable
 {
+    public static List<Enemy> LivingEnemies;
+
+
     public float Health { get; set; }
     public float attackSpeed = 1f;
     public Vector3 wayPoint;
@@ -18,6 +23,16 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     [SerializeField] protected float maxHealth = 3f;
     [SerializeField] protected float maxDistance = 5f;
 
+
+    protected virtual void Awake()
+    {
+        if(LivingEnemies == null)
+        {
+            LivingEnemies = new List<Enemy>();
+        }
+
+        LivingEnemies.Add(this);
+    }
     protected virtual void Start()
     {
         EnemySpawned();
@@ -33,7 +48,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
 
     protected virtual void OnDisable()
     {
-        EnemyBehaviour.enemyDead?.Invoke(this);
+        //EnemyBehaviour.enemyDead?.Invoke(this);
     }
     
     protected virtual void OnEnable()
@@ -43,7 +58,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     
     protected virtual void EnemySpawned()
     {
-        EnemyBehaviour.enemySpawned?.Invoke(this);
+        //EnemyBehaviour.enemySpawned?.Invoke(this);
         Health = maxHealth;
     }
     
@@ -52,9 +67,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         Health -= damageAmount;
         if (Health <= 0)
         {
-            GameManager.instance.playerLiraAmount += 10; // Add 10 coins for each defeated enemy
-            gameObject.SetActive(false);
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -91,4 +104,15 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     }
 
     protected abstract void MovementBehavior();
+
+    protected virtual void Die()
+    {
+        GameManager.instance.playerLiraAmount += 10; // Add 10 coins for each defeated enemy
+        gameObject.SetActive(false);
+        LivingEnemies.Remove(this);
+
+        Destroy(gameObject);
+    }
+
+
 }
