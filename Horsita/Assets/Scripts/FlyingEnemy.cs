@@ -15,7 +15,9 @@ public class FlyingEnemy : Enemy
     {
         base.Start();
         InvokeRepeating(nameof(StartShooting), 0f, shootInterval);
-        _targetArea = GameObject.FindGameObjectWithTag("Player").transform;
+        //_targetArea = GameObject.FindGameObjectWithTag("Player").transform;
+        _targetArea = SussitaManager.instance.gameObject.transform;
+
         MovementBehavior();
     }
 
@@ -34,9 +36,9 @@ public class FlyingEnemy : Enemy
 
     protected override void SetNewDestination()
     {
-        float randomX = UnityEngine.Random.Range(-650f, 700f);
-        float randomY = UnityEngine.Random.Range(540f, 850f);
-        wayPoint = new Vector3(randomX, randomY, -90f);
+        float randomX = UnityEngine.Random.Range(-150, 150);
+        float randomY = UnityEngine.Random.Range(0, 100);
+        wayPoint = new Vector3(randomX, randomY, 0);
     }
 
     protected override void MovementBehavior()

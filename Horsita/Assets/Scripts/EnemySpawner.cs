@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+
+    [SerializeField] Vector2 spawnZone_TopLeft;
+    [SerializeField] Vector2 spawnZone_BottomRight;
+    [SerializeField] Vector2 spawnZone_z_Range;
+
     [SerializeField] GameObject flyingEnemyPrefab;
     // [SerializeField] GameObject fireBallPrefab;
     [SerializeField] float flyingEnemyInterval = 3f; // FlyingEnemy Spawn Delay
@@ -12,7 +17,8 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        _targetArea = GameObject.FindGameObjectWithTag("Player").transform;
+        //_targetArea = GameObject.FindGameObjectWithTag("Player").transform;
+        _targetArea = SussitaManager.instance.gameObject.transform;
         StartCoroutine(SpawnEnemies());
     }
 
@@ -32,7 +38,8 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnFlyingEnemy()
     {
-        Vector3 spawnPosition = new Vector3(Random.Range(-650f, 700f), Random.Range(540f, 850f), -90f);
+        //Vector3 spawnPosition = new Vector3(Random.Range(-650f, 700f), Random.Range(540f, 850f), -90f);
+        Vector3 spawnPosition = new Vector3(Random.Range(spawnZone_TopLeft.x, spawnZone_BottomRight.x), Random.Range(spawnZone_BottomRight.y, spawnZone_TopLeft.y), Random.Range(spawnZone_z_Range.x, spawnZone_z_Range.y));
         GameObject newFlyingEnemy = Instantiate(flyingEnemyPrefab, spawnPosition, Quaternion.identity);
         FlyingEnemy flyingEnemyScript = newFlyingEnemy.GetComponent<FlyingEnemy>();
         if (flyingEnemyScript != null)

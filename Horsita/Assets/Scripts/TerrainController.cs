@@ -18,6 +18,9 @@ public class TerrainController : MonoBehaviour
         Vertexes = Terrain.mesh.vertices;
         StartingPosition = Terrain.mesh.vertices;
         distance = 0;
+
+        if (sussitaManager == null)
+            sussitaManager = SussitaManager.instance;
     }
 
     // Update is called once per frame

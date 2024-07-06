@@ -12,6 +12,11 @@ public class TargettingModule_Player : MonoBehaviour
 
     List<Enemy> enemies => Enemy.LivingEnemies;
 
+    private void Start()
+    {
+        StartCoroutine(RefreshTargetting());
+    }
+
     IEnumerator RefreshTargetting()
     {
         while(true)
@@ -30,7 +35,7 @@ public class TargettingModule_Player : MonoBehaviour
 
             foreach (var enemy in enemies)
             {
-                float delta = Vector3.Distance(enemy.transform.position, SussitaManager.Instance.transform.position);
+                float delta = Vector3.Distance(enemy.transform.position, SussitaManager.instance.transform.position);
                 if (delta < shortestDistance)
                 {
                     tgt = enemy;
