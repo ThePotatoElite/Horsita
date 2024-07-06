@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
                 isSpawning = true;
                 SpawnFlyingEnemy();
             }
-            //yield return new WaitForSeconds(blockingEnemyInterval);
+            yield return new WaitForSeconds(blockingEnemyInterval);
             //SpawnBlockingEnemy();
             isSpawning = false;
         }
