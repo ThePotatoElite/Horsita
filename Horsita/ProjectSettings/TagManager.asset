@@ -8,6 +8,7 @@ TagManager:
   - FlyingEnemy
   - BlockingEnemy
   - Fireball
+  - Station
   layers:
   - Default
   - TransparentFX
