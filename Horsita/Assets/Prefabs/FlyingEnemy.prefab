@@ -116,6 +116,8 @@ MonoBehaviour:
   range: 0.5
   maxHealth: 3
   maxDistance: 5
+  fireBallPrefab: {fileID: 0}
+  fireBallStartPosition: {fileID: 0}
   shootInterval: 3
 --- !u!114 &2668303138735127378
 MonoBehaviour:
@@ -130,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceModifier: 6
-  breakModifier: 100
+  breakModifier: 0
 --- !u!64 &2694474839531414873
 MeshCollider:
   m_ObjectHideFlags: 0

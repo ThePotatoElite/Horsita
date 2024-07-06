@@ -9,8 +9,8 @@ public class SussitaManager : MonoSingleton<SussitaManager>
     //public static SussitaManager Instance { get => _instance; set => _instance = value; }
 
 
-    [SerializeField] float accelerationTime = 7f; // (IRL Sussita can get to 100 km/h by 15 seconds)
-    [SerializeField] float decelerationTime = 3f;
+    [SerializeField] float accelerationTime = 4f; // (IRL Sussita can get to 100 km/h by 15 seconds)
+    [SerializeField] float decelerationTime = 2f;
     [SerializeField] Rigidbody sussitaRb;
     [SerializeField] private float _maxSpeed = 160f; // (Sussita can only reach 160 km/h)
     private static float _velocity = 0f;
@@ -95,11 +95,11 @@ public class SussitaManager : MonoSingleton<SussitaManager>
         else if (_isBraking && _velocity > 0)
         {
             _velocity -= (_maxSpeed / decelerationTime) * Time.deltaTime;
-            _momentum = _velocity*-1.3f;
+            //_momentum = _velocity*-1.3f;
         }
         else
         {
-            _momentum = _velocity * -1.1f;
+            _velocity -= _velocity * .5f * Time.deltaTime; //normal drag/decay
         }
 
         _velocity = Mathf.Clamp(_velocity, 0, _maxSpeed);
