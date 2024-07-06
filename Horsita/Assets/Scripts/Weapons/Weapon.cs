@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour
     protected Transform barrelRotator;
     
     [SerializeField] AudioClip shootSound; // Assign this in the Inspector
+    [SerializeField]
     private AudioSource audioSource; // Reference to the AudioSource component
 
     protected bool isShooting;
@@ -26,6 +27,8 @@ public class Weapon : MonoBehaviour
         isShooting = true;
         StartCoroutine(nameof(ShootCoroutine));
         audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
+
+        //audioSource.clip = shootSound
     }
 
    
