@@ -34,7 +34,7 @@ public class FireballTravel : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             SussitaManager.instance.TakeDamage(1f);
-            // enemy.FireBallHitSussita(gameObject);
+            enemy.FireBallHitSussita(gameObject);
         }
     }
 }
