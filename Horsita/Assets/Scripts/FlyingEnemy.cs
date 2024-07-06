@@ -15,6 +15,8 @@ public class FlyingEnemy : Enemy
 
     private Transform _targetArea;
     [SerializeField] protected float shootInterval = 3f;
+    [SerializeField] private Animator _animator;
+    
 
     protected override void Start()
     {
@@ -27,13 +29,25 @@ public class FlyingEnemy : Enemy
         MovementBehavior();
     }
 
+    protected override void Update()
+    {
+        base.Update();
+        _animator.speed = 1+ speed + SussitaManager.Instance.GetCurrentSpeed();
+    }
+
+    public override void TakeDamage(float damageAmount)
+    {
+        base.TakeDamage(damageAmount);
+        _animator.SetBool("Hit", true);
+    }
+
     //protected void OnDisable()
     //{
     //    //base.OnDisable();
     //    //GameManager.instance.playerLiraAmount += 10; // Add 10 lira coins for each death
     //    //StopShooting();
     //}
-    
+
     //protected override void Update()
     //{
     //    base.Update();
