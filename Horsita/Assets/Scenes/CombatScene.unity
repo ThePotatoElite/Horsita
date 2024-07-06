@@ -144,11 +144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d42188128566c7f49bfe6cd5b44c8954, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.217
+      value: -0.604
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d42188128566c7f49bfe6cd5b44c8954, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.109
+      value: -0.19
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d42188128566c7f49bfe6cd5b44c8954, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2439,13 +2439,29 @@ PrefabInstance:
       propertyPath: barrelPoint
       value: 
       objectReference: {fileID: 200066450}
+    - target: {fileID: 2241950353659209831, guid: 2da4df49e12c9b44782b2933f33c4a77, type: 3}
+      propertyPath: bulletData.flyForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241950353659209831, guid: 2da4df49e12c9b44782b2933f33c4a77, type: 3}
+      propertyPath: weaponData.fireRate
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2241950353659209831, guid: 2da4df49e12c9b44782b2933f33c4a77, type: 3}
+      propertyPath: weaponData.bulletPrefab
+      value: 
+      objectReference: {fileID: 1870236995995762532, guid: 138f8a5b7e2ccfa4d9c5dad99bc63efa, type: 3}
+    - target: {fileID: 2246025811102000130, guid: 2da4df49e12c9b44782b2933f33c4a77, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2246025811102000130, guid: 2da4df49e12c9b44782b2933f33c4a77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.2
+      value: 12.29
       objectReference: {fileID: 0}
     - target: {fileID: 2246025811102000130, guid: 2da4df49e12c9b44782b2933f33c4a77, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.96
+      value: -5.79
       objectReference: {fileID: 0}
     - target: {fileID: 2718241466806607709, guid: 2da4df49e12c9b44782b2933f33c4a77, type: 3}
       propertyPath: m_LocalPosition.y
