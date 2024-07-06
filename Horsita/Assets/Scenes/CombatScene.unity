@@ -2197,8 +2197,8 @@ MonoBehaviour:
   - {fileID: 845812041}
   flyingEnemyPrefab: {fileID: 4424869743569615304, guid: 37bb43451529ae94f81586affbab391e, type: 3}
   blockingEnemyPrefab: {fileID: 0}
-  flyingEnemyInterval: 2.5
-  blockingEnemyInterval: 2.5
+  flyingEnemyInterval: 3
+  blockingEnemyInterval: 3
 --- !u!4 &1097912280
 Transform:
   m_ObjectHideFlags: 0
