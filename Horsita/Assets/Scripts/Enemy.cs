@@ -13,7 +13,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     public Vector3 wayPoint;
 
     // protected Animator animator;
-    protected GameObject Sussita => SussitaManager.instance.gameObject;
+    protected GameObject Sussita => SussitaManager.Instance.gameObject;
     protected float AttackTimer = 0f;
     protected int Damage = 10;
 

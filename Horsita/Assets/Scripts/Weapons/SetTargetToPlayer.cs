@@ -7,7 +7,7 @@ public class SetTargetToPlayer : MonoBehaviour
 
     private void Start()
     {
-        weapon.SetTarget(SussitaManager.instance.gameObject);
+        weapon.SetTarget(SussitaManager.Instance.gameObject);
         Destroy(this); //JUST THIS COMPONENT! not the object itself
     }
 }

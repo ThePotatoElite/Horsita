@@ -11,6 +11,6 @@ public class MoveFaker_ForRigidbody : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.AddForce(Vector3.left * (SussitaManager.instance.GetCurrentSpeed() * distanceModifier - SussitaManager.instance.GetCurrentMomentum() * breakModifier) );
+        rb.AddForce(Vector3.left * (SussitaManager.Instance.GetCurrentSpeed() * distanceModifier - SussitaManager.Instance.GetCurrentMomentum() * breakModifier) );
     }
 }

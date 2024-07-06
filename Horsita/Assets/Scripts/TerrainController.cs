@@ -20,7 +20,7 @@ public class TerrainController : MonoBehaviour
         distance = 0;
 
         if (sussitaManager == null)
-            sussitaManager = SussitaManager.instance;
+            sussitaManager = SussitaManager.Instance;
     }
 
     // Update is called once per frame

@@ -45,7 +45,7 @@ public class Bullet : MonoBehaviour
         {
             //if (hit != null)
             //{
-            SussitaManager.instance.TakeDamage(damage);
+            SussitaManager.Instance.TakeDamage(damage);
             //}
         }
             Explode();

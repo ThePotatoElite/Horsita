@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SussitaManager : MonoSingleton<SussitaManager>
+public class SussitaManager : MonoBehaviour //MonoSingleton<SussitaManager>
 {
     ///// <summary>
     ///// This is basically the player
@@ -17,16 +17,16 @@ public class SussitaManager : MonoSingleton<SussitaManager>
     private static float _momentum = 0f;
     private bool _isAccelerating = false;
     private bool _isBraking = false;
-    public static SussitaManager instance;
+    public static SussitaManager Instance;
     public float AntiDrag = 1f;
     public float Health { get; set; } = 100;
 
 
     private void Awake()
     {
-        if(instance == null)
+        if(Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else

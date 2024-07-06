@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         //_targetArea = GameObject.FindGameObjectWithTag("Player").transform;
-        _targetArea = SussitaManager.instance.gameObject.transform.position;
+        _targetArea = SussitaManager.Instance.gameObject.transform;
         StartCoroutine(SpawnEnemies());
     }
 
@@ -35,8 +35,8 @@ public class EnemySpawner : MonoBehaviour
                 isSpawning = true;
                 SpawnFlyingEnemy();
             }
-            yield return new WaitForSeconds(blockingEnemyInterval);
-            SpawnBlockingEnemy();
+            //yield return new WaitForSeconds(blockingEnemyInterval);
+            //SpawnBlockingEnemy();
             isSpawning = false;
         }
     }

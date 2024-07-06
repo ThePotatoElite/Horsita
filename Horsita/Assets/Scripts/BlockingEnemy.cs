@@ -17,7 +17,7 @@ public class BlockingEnemy : Enemy
         // animator = GetComponent<Animator>();
         Transform sussitaTransform = GameObject.FindGameObjectWithTag("Player").transform;
         //_targetArea = new Vector3(sussitaTransform.position.x, sussitaTransform.position.y / 2, sussitaTransform.position.z);
-        _targetArea = SussitaManager.instance.transform;
+        _targetArea = SussitaManager.Instance.transform;
         MovementBehavior();
     }
 
@@ -90,7 +90,7 @@ public class BlockingEnemy : Enemy
             //{
             //    player.GetComponent<SussitaManager>().TakeDamage(damageAmount);
             //}
-            SussitaManager.instance.TakeDamage(damageAmount);
+            SussitaManager.Instance.TakeDamage(damageAmount);
         }
         //else
         //{
