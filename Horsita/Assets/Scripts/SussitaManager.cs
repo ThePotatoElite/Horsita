@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class SussitaManager : MonoBehaviour
 {
+    /// <summary>
+    /// This is basically the player
+    /// </summary>
+    static SussitaManager _instance;
+    public static SussitaManager Instance { get => _instance; set => _instance = value; }
+
+
     [SerializeField] float accelerationTime = 7f; // (IRL Sussita can get to 100 km/h by 15 seconds)
     [SerializeField] float decelerationTime = 3f;
     [SerializeField] Rigidbody sussitaRb;

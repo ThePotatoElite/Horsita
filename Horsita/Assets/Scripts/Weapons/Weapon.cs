@@ -54,6 +54,10 @@ public class Weapon : MonoBehaviour
         //StartCooldown();
     }
 
+    public virtual void SetTarget(GameObject newTgt)
+    {
+        target = newTgt;
+    }
     //protected virtual void StartCooldown()
     //{
 
