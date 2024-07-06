@@ -20,6 +20,9 @@ public class SussitaManager : MonoBehaviour //MonoSingleton<SussitaManager>
     private bool _isBraking = false;
     public static SussitaManager Instance;
     public float AntiDrag = 1f;
+    [SerializeField] AudioClip engineStartClip; // Assign this in the Inspector
+    private AudioSource audioSource; // Reference to the AudioSource component
+    private bool hasMoved = false; // To check if the car has moved for the first time
     public float Health { get; set; } = 100;
     public float MaxHealth { get; set; } = 100;
 
@@ -37,6 +40,20 @@ public class SussitaManager : MonoBehaviour //MonoSingleton<SussitaManager>
             Destroy(gameObject);
         }    
     }
+    
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
+    }
+    
+    private void PlayEngineStartSound()
+    {
+        if (audioSource != null && engineStartClip != null)
+        {
+            audioSource.PlayOneShot(engineStartClip);
+        }
+    }
+
 
     void Update()
     {
@@ -72,6 +89,11 @@ public class SussitaManager : MonoBehaviour //MonoSingleton<SussitaManager>
     {
         _isAccelerating = true;
         _isBraking = false;
+        if (!hasMoved)
+        {
+            PlayEngineStartSound();
+            hasMoved = true;
+        }
     }
     
     public void OnGasReleased()

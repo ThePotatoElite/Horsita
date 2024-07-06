@@ -5,6 +5,10 @@ public class FlyingEnemy : Enemy
     protected bool isShooting = false;
     protected float stopTimer = 0f;
     protected float shootingRange = 0f;
+    [SerializeField] AudioClip fireShoot;
+    [SerializeField] AudioClip waspDeath;
+    [SerializeField] AudioClip waspAlive;
+    private AudioSource audioSource; // Reference to the AudioSource component
 
     public GameObject fireBallPrefab;
     public Transform fireBallStartPosition;
@@ -19,7 +23,7 @@ public class FlyingEnemy : Enemy
         InvokeRepeating(nameof(StartShooting), 0f, shootInterval);
         //_targetArea = GameObject.FindGameObjectWithTag("Player").transform;
         _targetArea = SussitaManager.Instance.gameObject.transform;
-
+        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
         MovementBehavior();
     }
 
@@ -85,6 +89,10 @@ public class FlyingEnemy : Enemy
         // animator.SetBool("isShooting", true);
         StopMoving();
         Invoke(nameof(StopShooting), shootInterval);
+        if (audioSource != null && fireShoot != null)
+        {
+            audioSource.PlayOneShot(fireShoot);
+        }
         // GameObject fireBallInstance = Instantiate(fireBallPrefab, fireBallStartPosition.position, Quaternion.identity);
         // ireBallInstance.GetComponent<FireballTravel>().Initialize(this);
     }

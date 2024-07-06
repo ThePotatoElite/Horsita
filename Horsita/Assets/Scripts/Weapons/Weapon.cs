@@ -16,12 +16,16 @@ public class Weapon : MonoBehaviour
     protected Transform barrelPoint;
     [SerializeField]
     protected Transform barrelRotator;
+    
+    [SerializeField] AudioClip shootSound; // Assign this in the Inspector
+    private AudioSource audioSource; // Reference to the AudioSource component
 
     protected bool isShooting;
     void Start()
     {
         isShooting = true;
         StartCoroutine(nameof(ShootCoroutine));
+        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
     }
 
    
@@ -44,6 +48,10 @@ public class Weapon : MonoBehaviour
         {
             yield return new WaitForSeconds(1 / weaponData.fireRate);
             Shoot();
+            if (audioSource != null && shootSound != null)
+            {
+                audioSource.PlayOneShot(shootSound);
+            }
         }
     }
 
