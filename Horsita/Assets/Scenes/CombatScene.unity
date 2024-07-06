@@ -266,9 +266,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceModifier: 1.2
   breakModifier: 1
-  Repetition: 0
-  MoveVertically: 0
-  VerticalStrength: 0
+  Repetition: 768
+  MoveVertically: 1
+  VerticalStrength: 0.2
 --- !u!212 &270172705
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -703,6 +703,7 @@ RectTransform:
   m_Children:
   - {fileID: 939245842}
   - {fileID: 2089830147}
+  - {fileID: 1135865551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -906,9 +907,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceModifier: 1.5
   breakModifier: 1
-  Repetition: 0
-  MoveVertically: 0
-  VerticalStrength: 0
+  Repetition: 768
+  MoveVertically: 1
+  VerticalStrength: 0.2
 --- !u!212 &404900853
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1164,9 +1165,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceModifier: 0.5
   breakModifier: 1
-  Repetition: 0
-  MoveVertically: 0
-  VerticalStrength: 0
+  Repetition: 768
+  MoveVertically: 1
+  VerticalStrength: 0.2
 --- !u!212 &451753527
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1301,9 +1302,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceModifier: 1.5
   breakModifier: 1
-  Repetition: 0
-  MoveVertically: 0
-  VerticalStrength: 0
+  Repetition: 768
+  MoveVertically: 1
+  VerticalStrength: 0.2
 --- !u!212 &619847679
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1484,9 +1485,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceModifier: 0.5
   breakModifier: 1
-  Repetition: 0
-  MoveVertically: 0
-  VerticalStrength: 0
+  Repetition: 768
+  MoveVertically: 1
+  VerticalStrength: 0.2
 --- !u!212 &785696621
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1589,9 +1590,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceModifier: 1.8
   breakModifier: 1
-  Repetition: 0
-  MoveVertically: 0
-  VerticalStrength: 0
+  Repetition: 768
+  MoveVertically: 1
+  VerticalStrength: 0.2
 --- !u!212 &817001426
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1743,9 +1744,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceModifier: 1
   breakModifier: 1
-  Repetition: 0
-  MoveVertically: 0
-  VerticalStrength: 0
+  Repetition: 576
+  MoveVertically: 1
+  VerticalStrength: 0.2
 --- !u!212 &837279342
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1828,7 +1829,7 @@ Transform:
   m_GameObject: {fileID: 837919649}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -365, y: 128, z: -50}
+  m_LocalPosition: {x: 0, y: 128, z: -50}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1848,9 +1849,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceModifier: 3.5
   breakModifier: 1
-  Repetition: 0
-  MoveVertically: 0
-  VerticalStrength: 0
+  Repetition: 768
+  MoveVertically: 1
+  VerticalStrength: 0.2
 --- !u!212 &837919652
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1985,9 +1986,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceModifier: 2.5
   breakModifier: 1
-  Repetition: 0
-  MoveVertically: 0
-  VerticalStrength: 0
+  Repetition: 768
+  MoveVertically: 1
+  VerticalStrength: 0.2
 --- !u!212 &862694571
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2453,6 +2454,11 @@ Transform:
   - {fileID: 845812041}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1135865551 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+  m_PrefabInstance: {fileID: 2329976441674183919}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1237098789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,9 +2598,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceModifier: 1.8
   breakModifier: 1
-  Repetition: 0
-  MoveVertically: 0
-  VerticalStrength: 0
+  Repetition: 768
+  MoveVertically: 1
+  VerticalStrength: 0.2
 --- !u!212 &1325041407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3031,7 +3037,7 @@ Transform:
   m_GameObject: {fileID: 1459598244}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 403, y: 128.00002, z: -50}
+  m_LocalPosition: {x: 768, y: 128.00002, z: -50}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3051,9 +3057,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceModifier: 3.5
   breakModifier: 1
-  Repetition: 0
-  MoveVertically: 0
-  VerticalStrength: 0
+  Repetition: 768
+  MoveVertically: 1
+  VerticalStrength: 0.2
 --- !u!212 &1459598247
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3264,9 +3270,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceModifier: 2.5
   breakModifier: 1
-  Repetition: 0
-  MoveVertically: 0
-  VerticalStrength: 0
+  Repetition: 768
+  MoveVertically: 1
+  VerticalStrength: 0.2
 --- !u!212 &1528839764
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3851,9 +3857,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceModifier: 1
   breakModifier: 1
-  Repetition: 0
-  MoveVertically: 0
-  VerticalStrength: 0
+  Repetition: 576
+  MoveVertically: 1
+  VerticalStrength: 0.2
 --- !u!212 &2110610303
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3956,9 +3962,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceModifier: 1.2
   breakModifier: 1
-  Repetition: 0
-  MoveVertically: 0
-  VerticalStrength: 0
+  Repetition: 768
+  MoveVertically: 1
+  VerticalStrength: 0.2
 --- !u!212 &2130341768
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4014,6 +4020,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2329976441674183919
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 338748500}
+    m_Modifications:
+    - target: {fileID: 7344513903526205046, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_Name
+      value: Speedometer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1012
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 515
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550374517140257188, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 423ec88329f88784e8788bc9c0445217, type: 3}
 --- !u!1001 &3975298927356502179
 PrefabInstance:
   m_ObjectHideFlags: 0

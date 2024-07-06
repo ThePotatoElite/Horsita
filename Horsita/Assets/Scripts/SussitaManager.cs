@@ -126,6 +126,11 @@ public class SussitaManager : MonoBehaviour //MonoSingleton<SussitaManager>
     {
         return _momentum;
     }
+
+    public float GetMaxSpeed()
+    {
+        return _maxSpeed;
+    }
     
     public void TakeDamage(float damageAmount)
     {
