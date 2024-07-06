@@ -5,6 +5,8 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     Collider col;
     [SerializeField]
+    GameObject gfx;
+    [SerializeField]
     GameObject explosionPrefab;
     [SerializeField]
     bool isPlayerBullet; //bad, but whatever
@@ -52,6 +54,7 @@ public class Bullet : MonoBehaviour
     protected virtual void Explode()
     {
         col.enabled = false;
+        gfx.SetActive(false);
         explosionPrefab.SetActive(true);
         //spawn vfx and destroy self
         Invoke(nameof(DestroySelf), .5f); //should be timed for mid-explosion

@@ -7,7 +7,7 @@ public class BlockingEnemy : Enemy
     protected bool isBlocking = false;
     protected bool isDead = false;
 
-    private Vector3 _targetArea;
+    private Transform _targetArea;
     [SerializeField] protected float blockDuration = 1f;
     [SerializeField] protected float walkSpeed = 10f;
 
@@ -16,16 +16,17 @@ public class BlockingEnemy : Enemy
         base.Start();
         // animator = GetComponent<Animator>();
         Transform sussitaTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        _targetArea = new Vector3(sussitaTransform.position.x, sussitaTransform.position.y / 2, sussitaTransform.position.z);
+        //_targetArea = new Vector3(sussitaTransform.position.x, sussitaTransform.position.y / 2, sussitaTransform.position.z);
+        _targetArea = SussitaManager.instance.transform;
         MovementBehavior();
     }
 
-    protected override void OnDisable()
-    {
-        base.OnDisable();
-        GameManager.instance.playerLiraAmount += 5; // Add 5 lira coins for each death
-        StopBlocking();
-    }
+    //protected override void OnDisable()
+    //{
+    //    base.OnDisable();
+    //    GameManager.instance.playerLiraAmount += 5; // Add 5 lira coins for each death
+    //    StopBlocking();
+    //}
 
     protected override void MovementBehavior()
     {
@@ -40,7 +41,8 @@ public class BlockingEnemy : Enemy
 
     void WalkTowardsVehicle()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _targetArea, walkSpeed * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, _targetArea, walkSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, _targetArea.position, walkSpeed * Time.deltaTime);
     }
 
     protected virtual void OnTriggerEnter(Collider other)
@@ -83,27 +85,28 @@ public class BlockingEnemy : Enemy
     {
         if (isBlocking)
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null)
-            {
-                player.GetComponent<SussitaManager>().TakeDamage(damageAmount);
-            }
+            //GameObject player = GameObject.FindGameObjectWithTag("Player");
+            //if (player != null)
+            //{
+            //    player.GetComponent<SussitaManager>().TakeDamage(damageAmount);
+            //}
+            SussitaManager.instance.TakeDamage(damageAmount);
         }
-        else
-        {
+        //else
+        //{
             base.TakeDamage(damageAmount);
-            if (Health <= 0)
-            {
-                isDead = true;
-                // animator.SetBool("isDead", true);
-                // Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
-                Destroy(gameObject);
-            }
-        }
+            //if (Health <= 0)
+            //{
+            //    isDead = true;
+            //    // animator.SetBool("isDead", true);
+            //    // Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
+            //    Destroy(gameObject);
+            //}
+        //}
     }
     
-    public void SetTargetArea(Vector3 target)
-    {
-        _targetArea = target;
-    }
+    //public void SetTargetArea(Transform target)
+    //{
+    //    _targetArea = target;
+    //}
 }

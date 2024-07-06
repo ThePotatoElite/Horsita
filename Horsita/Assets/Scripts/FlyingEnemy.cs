@@ -9,7 +9,7 @@ public class FlyingEnemy : Enemy
     public GameObject fireBallPrefab;
     public Transform fireBallStartPosition;
 
-    private Vector3 _targetArea;
+    private Transform _targetArea;
     [SerializeField] protected float shootInterval = 3f;
 
     protected override void Start()
@@ -23,12 +23,12 @@ public class FlyingEnemy : Enemy
         MovementBehavior();
     }
 
-    protected override void OnDisable()
-    {
-        base.OnDisable();
-        GameManager.instance.playerLiraAmount += 10; // Add 10 lira coins for each death
-        StopShooting();
-    }
+    //protected void OnDisable()
+    //{
+    //    //base.OnDisable();
+    //    //GameManager.instance.playerLiraAmount += 10; // Add 10 lira coins for each death
+    //    //StopShooting();
+    //}
     
     //protected override void Update()
     //{
@@ -102,18 +102,18 @@ public class FlyingEnemy : Enemy
         ResumeMoving();
     }
 
-    protected override void OnTriggerStay(Collider other)
-    {
-        base.OnTriggerStay(other);
-        if (other.CompareTag("Player"))
-        {
-            if (AttackTimer > Mathf.Pow(0.9f, attackSpeed))
-            {
-                other.GetComponentInParent<SussitaManager>().TakeDamage(Damage);
-                AttackTimer = 0;
-            }
-        }
-    }
+    //protected override void OnTriggerStay(Collider other)
+    //{
+    //    base.OnTriggerStay(other);
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        if (AttackTimer > Mathf.Pow(0.9f, attackSpeed))
+    //        {
+    //            other.GetComponentInParent<SussitaManager>().TakeDamage(Damage);
+    //            AttackTimer = 0;
+    //        }
+    //    }
+    //}
     
     public void FireBallHitSussita(GameObject fireBallInstance)
     {
@@ -129,7 +129,7 @@ public class FlyingEnemy : Enemy
         fireBallPrefab = fireBall;
     }
     
-    public void SetTargetArea(Vector3 target)
+    public void SetTargetArea(Transform target)
     {
         _targetArea = target;
     }

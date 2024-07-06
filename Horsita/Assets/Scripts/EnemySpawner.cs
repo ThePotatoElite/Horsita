@@ -10,12 +10,12 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] Transform[] spawnPoints;
 
     [SerializeField] GameObject flyingEnemyPrefab;
-    [SerializeField] FlyingEnemy flyingEnemyScript;
+    //[SerializeField] FlyingEnemy flyingEnemyScript;
     [SerializeField] GameObject blockingEnemyPrefab;
     // [SerializeField] GameObject fireBallPrefab;
     [SerializeField] float flyingEnemyInterval = 3f; // FlyingEnemy Spawn Delay
     [SerializeField] float blockingEnemyInterval = 5f; // BlockingEnemy Spawn Delay
-    private Vector3 _targetArea;
+    private Transform _targetArea;
     private bool isSpawning = false;
 
     void Start()
@@ -47,13 +47,13 @@ public class EnemySpawner : MonoBehaviour
         //Vector3 spawnPosition = new Vector3(Random.Range(spawnZone_TopLeft.x, spawnZone_BottomRight.x), Random.Range(spawnZone_BottomRight.y, spawnZone_TopLeft.y), Random.Range(spawnZone_z_Range.x, spawnZone_z_Range.y));
         Vector3 spawnPosition = spawnPoints[Random.Range(0,spawnPoints.Length)].position;
         GameObject newFlyingEnemy = Instantiate(flyingEnemyPrefab, spawnPosition, Quaternion.identity);
-        FlyingEnemy flyingEnemyScript = newFlyingEnemy.GetComponent<FlyingEnemy>();
-        if (flyingEnemyScript != null)
-        {
-            // flyingEnemyScript.SetFireBall(fireBallPrefab);
-            flyingEnemyScript.SetTargetArea(_targetArea);
-            flyingEnemyScript.FireBallHitSussita(flyingEnemyPrefab);
-        }
+        //Enemy flyingEnemyScript = newFlyingEnemy.GetComponent<Enemy>();
+        //if (flyingEnemyScript != null)
+        //{
+        //    // flyingEnemyScript.SetFireBall(fireBallPrefab);
+        //    flyingEnemyScript.SetTargetArea(_targetArea);
+        //    //flyingEnemyScript.FireBallHitSussita(flyingEnemyPrefab);
+        //}
     }
     
     public void SpawnBlockingEnemy()
@@ -61,11 +61,11 @@ public class EnemySpawner : MonoBehaviour
         Vector3 spawnPosition = new Vector3(550f, 620f, -90f);
         GameObject newBlockingEnemy = Instantiate(blockingEnemyPrefab, spawnPosition, Quaternion.identity);
 
-        BlockingEnemy blockingEnemyScript = newBlockingEnemy.GetComponent<BlockingEnemy>();
-        if (blockingEnemyScript != null)
-        {
-            blockingEnemyScript.SetTargetArea(_targetArea);
-            // blockingEnemyScript.BlockSpeed = 1f;
-        }
+        //BlockingEnemy blockingEnemyScript = newBlockingEnemy.GetComponent<BlockingEnemy>();
+        //if (blockingEnemyScript != null)
+        //{
+        //    blockingEnemyScript.SetTargetArea(_targetArea);
+        //    // blockingEnemyScript.BlockSpeed = 1f;
+        //}
     }
 }

@@ -6,14 +6,14 @@ using UnityEngine;
 [Serializable]
 public abstract class Enemy : MonoBehaviour, IDamageable
 {
-    public static List<Enemy> LivingEnemies;
+    public static List<Enemy> LivingEnemies = new List<Enemy>();
     
     public float Health { get; set; }
     public float attackSpeed = 1f;
     public Vector3 wayPoint;
 
     // protected Animator animator;
-    protected GameObject Sussita;
+    protected GameObject Sussita => SussitaManager.instance.gameObject;
     protected float AttackTimer = 0f;
     protected int Damage = 10;
 
@@ -36,8 +36,10 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     {
         EnemySpawned();
         SetNewDestination();
-        Sussita = GameObject.FindGameObjectWithTag("Player");
+        //Sussita = GameObject.FindGameObjectWithTag("Player");
         // animator = GetComponent<Animator>();
+
+
     }
 
     protected virtual void SetNewDestination()
@@ -45,15 +47,15 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         wayPoint = new Vector3(UnityEngine.Random.Range(-maxDistance, maxDistance), 0, UnityEngine.Random.Range(-maxDistance, maxDistance));
     }
 
-    protected virtual void OnDisable()
-    {
-        EnemyBehaviour.enemyDead?.Invoke(this);
-    }
+    //protected virtual void OnDisable()
+    //{
+    //    EnemyBehaviour.enemyDead?.Invoke(this);
+    //}
     
-    protected virtual void OnEnable()
-    {
-        EnemySpawned();
-    }
+    //protected virtual void OnEnable()
+    //{
+    //    EnemySpawned();
+    //}
     
     protected virtual void EnemySpawned()
     {
@@ -106,7 +108,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     protected virtual void Die()
     {
         GameManager.instance.playerLiraAmount += 10; // Add 10 coins for each defeated enemy
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         LivingEnemies.Remove(this);
 
         Destroy(gameObject);

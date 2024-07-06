@@ -95,11 +95,11 @@ public class SussitaManager : MonoSingleton<SussitaManager>
         else if (_isBraking && _velocity > 0)
         {
             _velocity -= (_maxSpeed / decelerationTime) * Time.deltaTime;
+            _momentum = _velocity/2f;
         }
 
         _velocity = Mathf.Clamp(_velocity, 0, _maxSpeed);
 
-        _momentum = (_velocity - previousVel);
 
         float velocityInMps = _velocity * 1000f / 3600f; // Convert velocity to m/s for Rigidbody
         Vector3 movement = transform.forward * velocityInMps;
