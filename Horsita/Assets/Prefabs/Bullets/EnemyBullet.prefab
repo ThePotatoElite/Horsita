@@ -226,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5850952670511749125}
   distanceModifier: 4
+  breakModifier: 100
 --- !u!1 &3885523262794198567
 GameObject:
   m_ObjectHideFlags: 0

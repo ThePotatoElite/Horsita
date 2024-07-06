@@ -14,6 +14,7 @@ public class SussitaManager : MonoBehaviour
     [SerializeField] Rigidbody sussitaRb;
     [SerializeField] private float _maxSpeed = 160f; // (Sussita can only reach 160 km/h)
     private static float _velocity = 0f;
+    private static float _momentum = 0f;
     private bool _isAccelerating = false;
     private bool _isBraking = false;
     public static SussitaManager instance;
@@ -85,6 +86,8 @@ public class SussitaManager : MonoBehaviour
 
     void ManageVelocity()
     {
+        float previousVel = _velocity;
+
         if (_isAccelerating && _velocity < _maxSpeed)
         {
             _velocity += (_maxSpeed / accelerationTime) * Time.deltaTime;
@@ -94,6 +97,9 @@ public class SussitaManager : MonoBehaviour
             _velocity -= (_maxSpeed / decelerationTime) * Time.deltaTime;
         }
         _velocity = Mathf.Clamp(_velocity, 0, _maxSpeed);
+
+        _momentum = (_velocity - previousVel) *-1f;
+
         float velocityInMps = _velocity * 1000f / 3600f; // Convert velocity to m/s for Rigidbody
         Vector3 movement = transform.forward * velocityInMps;
         sussitaRb.linearVelocity = new Vector3(movement.x, sussitaRb.linearVelocity.y, movement.z);
@@ -103,6 +109,10 @@ public class SussitaManager : MonoBehaviour
     public float GetCurrentSpeed()
     {
         return _velocity;
+    }
+    public float GetCurrentMomentum()
+    {
+        return _momentum;
     }
     
     public void TakeDamage(float damageAmount)

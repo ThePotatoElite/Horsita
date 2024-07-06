@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnZone_TopLeft: {x: -150, y: 100}
   spawnZone_BottomRight: {x: 150, y: 0}
-  spawnZone_z_Range: {x: 10, y: 50}
+  spawnZone_z_Range: {x: 0, y: 0}
   flyingEnemyPrefab: {fileID: 4424869743569615304, guid: 37bb43451529ae94f81586affbab391e, type: 3}
   flyingEnemyInterval: 3
 --- !u!4 &1097912280
