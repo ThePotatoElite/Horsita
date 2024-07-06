@@ -21,7 +21,9 @@ public class SussitaManager : MonoBehaviour //MonoSingleton<SussitaManager>
     public static SussitaManager Instance;
     public float AntiDrag = 1f;
     public float Health { get; set; } = 100;
+    public float MaxHealth { get; set; } = 100;
 
+    public static System.Action<float> OnHealthChanged;
 
     private void Awake()
     {
@@ -139,6 +141,7 @@ public class SussitaManager : MonoBehaviour //MonoSingleton<SussitaManager>
     public void TakeDamage(float damageAmount)
     {
         Health -= damageAmount;
+        OnHealthChanged?.Invoke(Health/MaxHealth);
         if (Health <= 0)
         {
             Debug.Log("Sussita is dead! R.I.P!");

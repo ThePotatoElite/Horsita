@@ -18,11 +18,11 @@ public class PlayerInfoConfig : ScriptableObject
         Debug.Log($"Player taking : {damage} | HP : {CurrentHealth}");
     }
 
-    public void SusitaInPuddle(GuageBars liquidBar, float litter)
-    {
-        UpdateDragAndLiquid(litter);
-        liquidBar.SetLiquid(CurrentLiquid);
-    }
+    //public void SusitaInPuddle(GuageBars liquidBar, float litter)
+    //{
+    //    UpdateDragAndLiquid(litter);
+    //    liquidBar.SetLiquid(CurrentLiquid);
+    //}
 
     public void Die()
     {
