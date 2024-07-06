@@ -9,10 +9,11 @@ public class SussitaManager : MonoBehaviour //MonoSingleton<SussitaManager>
     //public static SussitaManager Instance { get => _instance; set => _instance = value; }
 
 
+    [SerializeField] float extraGravity = 4f; // (IRL Sussita can get to 100 km/h by 15 seconds)
     [SerializeField] float accelerationTime = 4f; // (IRL Sussita can get to 100 km/h by 15 seconds)
     [SerializeField] float decelerationTime = 2f;
     [SerializeField] Rigidbody sussitaRb;
-    [SerializeField] private float _maxSpeed = 160f; // (Sussita can only reach 160 km/h)
+    [SerializeField] private float _maxSpeed = 260f; // (Sussita can only reach 160 km/h)
     private static float _velocity = 0f;
     private static float _momentum = 0f;
     private bool _isAccelerating = false;
@@ -40,7 +41,10 @@ public class SussitaManager : MonoBehaviour //MonoSingleton<SussitaManager>
         HandleInput();
         ManageVelocity();
     }
-    
+    private void FixedUpdate()
+    {
+        sussitaRb.AddForce(Vector3.down * extraGravity);
+    }
     void HandleInput()
     {
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))

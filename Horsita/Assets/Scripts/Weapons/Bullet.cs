@@ -24,10 +24,10 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, ttl);
     }
 
-    private void Update()
-    {
-        transform.forward = rb.linearVelocity.normalized;
-    }
+    //private void Update()
+    //{
+    //    transform.forward = rb.linearVelocity.normalized;
+    //}
 
     //collision stuff
     private void OnCollisionEnter(Collision collision)
