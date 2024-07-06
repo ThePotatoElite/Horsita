@@ -95,7 +95,7 @@ public class SussitaManager : MonoSingleton<SussitaManager>
         else if (_isBraking && _velocity > 0)
         {
             _velocity -= (_maxSpeed / decelerationTime) * Time.deltaTime;
-            _momentum = _velocity/2f;
+            _momentum = _velocity/-2f;
         }
 
         _velocity = Mathf.Clamp(_velocity, 0, _maxSpeed);
