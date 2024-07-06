@@ -18,7 +18,7 @@ public class FlyingEnemy : Enemy
         // animator = GetComponent<Animator>();
         InvokeRepeating(nameof(StartShooting), 0f, shootInterval);
         //_targetArea = GameObject.FindGameObjectWithTag("Player").transform;
-        _targetArea = SussitaManager.instance.gameObject.transform;
+        _targetArea = SussitaManager.instance.gameObject.transform.position;
 
         MovementBehavior();
     }
