@@ -55,7 +55,7 @@ MonoBehaviour:
   isPlayerBullet: 1
   rb: {fileID: 5850952670511749125}
   ttl: 3
-  bulletHit: {fileID: 0}
+  bulletHit: {fileID: 8300000, guid: 73d5631a3ef1c6440b57a33bff845368, type: 3}
 --- !u!54 &5850952670511749125
 Rigidbody:
   m_ObjectHideFlags: 0
