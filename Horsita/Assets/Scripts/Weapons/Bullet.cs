@@ -14,9 +14,16 @@ public class Bullet : MonoBehaviour
     Rigidbody rb;
     [SerializeField]
     float ttl = 4f;
+    [SerializeField] private AudioClip bulletHit;
+    private AudioSource audioSource; // Reference to the AudioSource component
 
     float damage;
-   
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
+    }
+    
     public void Shoot(float force, float dmg)
     {
         damage = dmg;
@@ -39,6 +46,7 @@ public class Bullet : MonoBehaviour
             if (hit != null)
             {
                 hit.TakeDamage(damage);
+                audioSource.PlayOneShot(bulletHit);
             }
         }
         else
