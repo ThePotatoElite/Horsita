@@ -56,17 +56,17 @@ public class BlockingEnemy : Enemy
         }
     }
 
-    protected override void OnTriggerStay(Collider other)
-    {
-        base.OnTriggerStay(other);
-        if (other.CompareTag("Player"))
-        {
-            if (!isBlocking)
-            {
-                StartBlocking();
-            }
-        }
-    }
+    //protected override void OnTriggerStay(Collider other)
+    //{
+    //    base.OnTriggerStay(other);
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        if (!isBlocking)
+    //        {
+    //            StartBlocking();
+    //        }
+    //    }
+    //}
 
     protected virtual void StartBlocking()
     {

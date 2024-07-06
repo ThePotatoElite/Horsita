@@ -91,17 +91,17 @@ public abstract class Enemy : MonoBehaviour, IDamageable
             transform.rotation = Quaternion.Euler(0, -90, 0);
     }
 
-    protected virtual void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            if (AttackTimer > Mathf.Pow(0.9f, attackSpeed))
-            {
-                other.GetComponentInParent<SussitaManager>().TakeDamage(Damage);
-                AttackTimer = 0;
-            }
-        }
-    }
+    //protected virtual void OnTriggerStay(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        if (AttackTimer > Mathf.Pow(0.9f, attackSpeed))
+    //        {
+    //            other.GetComponentInParent<SussitaManager>().TakeDamage(Damage);
+    //            AttackTimer = 0;
+    //        }
+    //    }
+    //}
 
     protected abstract void MovementBehavior();
 

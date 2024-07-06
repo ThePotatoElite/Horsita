@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 5749634336922861916}
   - component: {fileID: 1684893887609272990}
   - component: {fileID: 5676618217875971325}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: BoomBoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,6 +544,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shell Coloured
       objectReference: {fileID: 0}
+    - target: {fileID: 360642909133549557, guid: 17c76eae1d6e8344e836ce90be792e19, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 904074814011567296, guid: 17c76eae1d6e8344e836ce90be792e19, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1029796526938617167, guid: 17c76eae1d6e8344e836ce90be792e19, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.9999998
@@ -599,6 +607,38 @@ PrefabInstance:
     - target: {fileID: 1029796526938617167, guid: 17c76eae1d6e8344e836ce90be792e19, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2537057084004129886, guid: 17c76eae1d6e8344e836ce90be792e19, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584882359070790655, guid: 17c76eae1d6e8344e836ce90be792e19, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693169816658993296, guid: 17c76eae1d6e8344e836ce90be792e19, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321571838727208798, guid: 17c76eae1d6e8344e836ce90be792e19, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4225634730637461347, guid: 17c76eae1d6e8344e836ce90be792e19, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765833088792689527, guid: 17c76eae1d6e8344e836ce90be792e19, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959380839721557824, guid: 17c76eae1d6e8344e836ce90be792e19, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962917978981940229, guid: 17c76eae1d6e8344e836ce90be792e19, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

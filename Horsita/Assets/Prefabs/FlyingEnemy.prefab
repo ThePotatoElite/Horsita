@@ -150,8 +150,8 @@ MonoBehaviour:
   maxHealth: 3
   maxDistance: 5
   fireShoot: {fileID: 8300000, guid: da82156b1b969c144adacd9a0f250d27, type: 3}
-  waspDeath: {fileID: 0}
-  waspAlive: {fileID: 0}
+  waspDeath: {fileID: 8300000, guid: ff2f34a921ec52e41928990074ce5200, type: 3}
+  waspAlive: {fileID: 8300000, guid: dd2f00a452132054db9c81b8ff5c3218, type: 3}
   fireBallPrefab: {fileID: 0}
   fireBallStartPosition: {fileID: 0}
   shootInterval: 3

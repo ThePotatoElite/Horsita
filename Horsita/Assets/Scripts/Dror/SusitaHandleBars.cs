@@ -18,29 +18,29 @@ public class SusitaHandleBars : MonoBehaviour
         //guageBars.SetLiquid(playerConfig.MinLiquid); // Initializing liquid bar
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other == playerCollider)
-        {
-            if (other.gameObject.CompareTag("Enemy"))
-            {
-                float enemyDamage = 0.15f; // Enemy damage need to be initialized --> Enemy.gameObject.damage
-                //playerConfig.TakeDamage(guageBars, enemyDamage);
-                SussitaManager.Instance.TakeDamage(enemyDamage);
-            }
-            //else if (other.gameObject.CompareTag("Water"))
-            //{
-            //    _inLiquid = true;
-            //    playerConfig.SusitaInPuddle(guageBars, 0.25f);
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other == playerCollider)
+    //    {
+    //        if (other.gameObject.CompareTag("Enemy"))
+    //        {
+    //            float enemyDamage = 0.15f; // Enemy damage need to be initialized --> Enemy.gameObject.damage
+    //            //playerConfig.TakeDamage(guageBars, enemyDamage);
+    //            SussitaManager.Instance.TakeDamage(enemyDamage);
+    //        }
+    //        //else if (other.gameObject.CompareTag("Water"))
+    //        //{
+    //        //    _inLiquid = true;
+    //        //    playerConfig.SusitaInPuddle(guageBars, 0.25f);
 
-            //    if (dryCoroutine != null)
-            //    {
-            //        StopCoroutine(dryCoroutine);
-            //        dryCoroutine = null;
-            //    }
-            //}
-        }
-    }
+    //        //    if (dryCoroutine != null)
+    //        //    {
+    //        //        StopCoroutine(dryCoroutine);
+    //        //        dryCoroutine = null;
+    //        //    }
+    //        //}
+    //    }
+    //}
 
     //private void OnTriggerExit(Collider other)
     //{
