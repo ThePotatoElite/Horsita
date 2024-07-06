@@ -42,10 +42,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3303846733004658664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52333700bec367543a8a5900a452d473, type: 3}
+  m_Script: {fileID: 11500000, guid: d6811ddaaf5d6fe499e74cea63dfcea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerConfig: {fileID: 0}
+  playerConfig: {fileID: 11400000, guid: 9de2ad24701e9a140957a359b22a62e6, type: 2}
   playerCollider: {fileID: 0}
 --- !u!114 &1882885613758488746
 MonoBehaviour:
@@ -56,6 +56,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3303846733004658664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2215fe6cd18c41846bfdb7efd7bd6e5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4eaac026b34dde04398378f96330b06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
