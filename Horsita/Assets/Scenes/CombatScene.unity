@@ -3931,6 +3931,10 @@ PrefabInstance:
       propertyPath: barrelPoint
       value: 
       objectReference: {fileID: 1237098790}
+    - target: {fileID: 2241950353659209831, guid: 2da4df49e12c9b44782b2933f33c4a77, type: 3}
+      propertyPath: weaponData.bulletPrefab
+      value: 
+      objectReference: {fileID: 1870236995995762532, guid: 138f8a5b7e2ccfa4d9c5dad99bc63efa, type: 3}
     - target: {fileID: 2246025811102000130, guid: 2da4df49e12c9b44782b2933f33c4a77, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
