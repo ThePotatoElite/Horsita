@@ -426,6 +426,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4953232840523182856, guid: a174a2fa25e02fe4bb9c28560e22f3e5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d641e66fbb9fbde4d9e4af9795293a35, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -533,6 +537,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 519234131937799014, guid: 5c35b13b638954047824a41ef7a1a249, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bc771eb9db8137646808420ce7889efe, type: 2}
     - target: {fileID: 919132149155446097, guid: 5c35b13b638954047824a41ef7a1a249, type: 3}
       propertyPath: m_Name
       value: Wings
