@@ -21,8 +21,10 @@ public class SussitaManager : MonoBehaviour //MonoSingleton<SussitaManager>
     public static SussitaManager Instance;
     public float AntiDrag = 1f;
     [SerializeField] AudioClip engineStartClip; // Assign this in the Inspector
+    [SerializeField] AudioClip engineDriveClip;
     private AudioSource audioSource; // Reference to the AudioSource component
     private bool hasMoved = false; // To check if the car has moved for the first time
+    private bool engineStartPlayed = false;
     public float Health { get; set; } = 100;
     public float MaxHealth { get; set; } = 100;
 
@@ -59,6 +61,17 @@ public class SussitaManager : MonoBehaviour //MonoSingleton<SussitaManager>
     {
         HandleInput();
         ManageVelocity();
+        CheckAndPlayEngineSound();
+    }
+    
+    private void CheckAndPlayEngineSound()
+    {
+        if (!audioSource.isPlaying && engineStartPlayed)
+        {
+            audioSource.clip = engineDriveClip;
+            audioSource.loop = true; // Loop the engine drive sound
+            audioSource.Play();
+        }
     }
     //private void FixedUpdate()
     //{
