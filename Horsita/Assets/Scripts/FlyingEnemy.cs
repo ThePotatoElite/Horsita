@@ -4,16 +4,18 @@ public class FlyingEnemy : Enemy
 {
     protected bool isShooting = false;
     protected float stopTimer = 0f;
+    protected float shootingRange = 0f;
 
-    // public GameObject fireBallPrefab;
-    // public Transform fireBallStartPosition;
+    public GameObject fireBallPrefab;
+    public Transform fireBallStartPosition;
 
-    private Transform _targetArea;
+    private Vector3 _targetArea;
     [SerializeField] protected float shootInterval = 3f;
 
     protected override void Start()
     {
         base.Start();
+        // animator = GetComponent<Animator>();
         InvokeRepeating(nameof(StartShooting), 0f, shootInterval);
         //_targetArea = GameObject.FindGameObjectWithTag("Player").transform;
         _targetArea = SussitaManager.instance.gameObject.transform;
@@ -84,12 +86,13 @@ public class FlyingEnemy : Enemy
         StopMoving();
         Invoke(nameof(StopShooting), shootInterval);
         // GameObject fireBallInstance = Instantiate(fireBallPrefab, fireBallStartPosition.position, Quaternion.identity);
-        // fireBallInstance.GetComponent<FireballTravel>().Initialize(this);
+        // ireBallInstance.GetComponent<FireballTravel>().Initialize(this);
     }
 
     protected virtual void StopShooting()
     {
         isShooting = false;
+        // animator = GetComponent<Animator>();
         /*
         if (animator != null)
         {
@@ -111,14 +114,35 @@ public class FlyingEnemy : Enemy
             }
         }
     }
-    /*
+    
+    public void FireBallHitSussita(GameObject fireBallInstance)
+    {
+        if (fireBallInstance != null && fireBallInstance.CompareTag("Fireball"))
+        {
+            Destroy(fireBallInstance);
+        }
+    }
+    
+    
     public void SetFireBall(GameObject fireBall)
     {
         fireBallPrefab = fireBall;
     }
-    */
-    public void SetTargetArea(Transform target)
+    
+    public void SetTargetArea(Vector3 target)
     {
         _targetArea = target;
+    }
+    
+    private void AdjustRotation()
+    {
+        if (transform.position.x <= -550)
+        {
+            transform.rotation = Quaternion.Euler(0, -90, 0);
+        }
+        else if (transform.position.x >= -250)
+        {
+            transform.rotation = Quaternion.Euler(0, 90, 0);
+        }
     }
 }

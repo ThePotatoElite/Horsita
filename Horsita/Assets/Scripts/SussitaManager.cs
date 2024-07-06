@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SussitaManager : MonoBehaviour
+public class SussitaManager : MonoSingleton<SussitaManager>
 {
     ///// <summary>
     ///// This is basically the player
@@ -18,7 +18,7 @@ public class SussitaManager : MonoBehaviour
     private bool _isAccelerating = false;
     private bool _isBraking = false;
     public static SussitaManager instance;
-    
+    public float AntiDrag = 1f;
     public float Health { get; set; } = 100;
 
 
@@ -84,18 +84,19 @@ public class SussitaManager : MonoBehaviour
         _isBraking = false;
     }
 
-    void ManageVelocity()
+    public void ManageVelocity()
     {
         float previousVel = _velocity;
 
         if (_isAccelerating && _velocity < _maxSpeed)
         {
-            _velocity += (_maxSpeed / accelerationTime) * Time.deltaTime;
+            _velocity += (_maxSpeed / accelerationTime) * Time.deltaTime; // * AntiDrag;
         }
         else if (_isBraking && _velocity > 0)
         {
             _velocity -= (_maxSpeed / decelerationTime) * Time.deltaTime;
         }
+
         _velocity = Mathf.Clamp(_velocity, 0, _maxSpeed);
 
         _momentum = (_velocity - previousVel);
@@ -103,7 +104,13 @@ public class SussitaManager : MonoBehaviour
         float velocityInMps = _velocity * 1000f / 3600f; // Convert velocity to m/s for Rigidbody
         Vector3 movement = transform.forward * velocityInMps;
         sussitaRb.linearVelocity = new Vector3(movement.x, sussitaRb.linearVelocity.y, movement.z);
-        Debug.Log("Current velocity is: " + _velocity);
+        Debug.Log($"Current velocity is: {_velocity}");
+        // Debug.Log($"Current velocity is: {_velocity} | Drag : {AntiDrag}");
+    }
+
+    public void ChangeVelocity(float decreaseVelocity)
+    {
+        _velocity *= decreaseVelocity;
     }
 
     public float GetCurrentSpeed()
@@ -120,7 +127,7 @@ public class SussitaManager : MonoBehaviour
         Health -= damageAmount;
         if (Health <= 0)
         {
-            Debug.Log("Sussita is dead");
+            Debug.Log("Sussita is dead! R.I.P!");
         }
         // UpdateHpBar();
     }

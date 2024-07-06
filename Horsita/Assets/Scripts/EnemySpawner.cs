@@ -10,10 +10,12 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] Transform[] spawnPoints;
 
     [SerializeField] GameObject flyingEnemyPrefab;
+    [SerializeField] FlyingEnemy flyingEnemyScript;
+    [SerializeField] GameObject blockingEnemyPrefab;
     // [SerializeField] GameObject fireBallPrefab;
     [SerializeField] float flyingEnemyInterval = 3f; // FlyingEnemy Spawn Delay
-    // [SerializeField] float timeBetweenWaves = 9f;
-    private Transform _targetArea;
+    [SerializeField] float blockingEnemyInterval = 5f; // BlockingEnemy Spawn Delay
+    private Vector3 _targetArea;
     private bool isSpawning = false;
 
     void Start()
@@ -25,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
+        yield return new WaitForSeconds(flyingEnemyInterval);
         while (true)
         {
             if (!isSpawning)
@@ -32,7 +35,8 @@ public class EnemySpawner : MonoBehaviour
                 isSpawning = true;
                 SpawnFlyingEnemy();
             }
-            yield return new WaitForSeconds(flyingEnemyInterval);
+            yield return new WaitForSeconds(blockingEnemyInterval);
+            SpawnBlockingEnemy();
             isSpawning = false;
         }
     }
@@ -48,7 +52,20 @@ public class EnemySpawner : MonoBehaviour
         {
             // flyingEnemyScript.SetFireBall(fireBallPrefab);
             flyingEnemyScript.SetTargetArea(_targetArea);
-            // flyingEnemyScript.FireBallHitSussita(newFlyingEnemy);
+            flyingEnemyScript.FireBallHitSussita(flyingEnemyPrefab);
+        }
+    }
+    
+    public void SpawnBlockingEnemy()
+    {
+        Vector3 spawnPosition = new Vector3(550f, 620f, -90f);
+        GameObject newBlockingEnemy = Instantiate(blockingEnemyPrefab, spawnPosition, Quaternion.identity);
+
+        BlockingEnemy blockingEnemyScript = newBlockingEnemy.GetComponent<BlockingEnemy>();
+        if (blockingEnemyScript != null)
+        {
+            blockingEnemyScript.SetTargetArea(_targetArea);
+            // blockingEnemyScript.BlockSpeed = 1f;
         }
     }
 }

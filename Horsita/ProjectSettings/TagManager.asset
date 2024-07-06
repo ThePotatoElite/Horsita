@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bumper
   - FlyingEnemy
+  - BlockingEnemy
+  - Fireball
   layers:
   - Default
   - TransparentFX

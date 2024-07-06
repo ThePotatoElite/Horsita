@@ -47,7 +47,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
 
     protected virtual void OnDisable()
     {
-        //EnemyBehaviour.enemyDead?.Invoke(this);
+        EnemyBehaviour.enemyDead?.Invoke(this);
     }
     
     protected virtual void OnEnable()
