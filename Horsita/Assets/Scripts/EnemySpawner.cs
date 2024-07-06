@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         //_targetArea = GameObject.FindGameObjectWithTag("Player").transform;
-        _targetArea = SussitaManager.instance.gameObject.transform;
+        _targetArea = SussitaManager.instance.gameObject.transform.position;
         StartCoroutine(SpawnEnemies());
     }
 
