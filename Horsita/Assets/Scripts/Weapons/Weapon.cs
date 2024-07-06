@@ -50,7 +50,7 @@ public class Weapon : MonoBehaviour
     public virtual void Shoot()
     {
         Bullet bullet = Instantiate(weaponData.bulletPrefab, barrelPoint.position, barrelPoint.rotation).GetComponent<Bullet>();
-        bullet.Shoot(bulletData.flyForce);
+        bullet.Shoot(bulletData.flyForce, weaponData.damage);
         //StartCooldown();
     }
 

@@ -37,7 +37,7 @@ public class FlyingEnemy : Enemy
     protected override void SetNewDestination()
     {
         float randomX = UnityEngine.Random.Range(-150, 150);
-        float randomY = UnityEngine.Random.Range(0, 100);
+        float randomY = UnityEngine.Random.Range(40, 100);
         wayPoint = new Vector3(randomX, randomY, 0);
     }
 

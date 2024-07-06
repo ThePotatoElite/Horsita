@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 863650139941154837}
   - component: {fileID: 9067684192841370925}
   - component: {fileID: 2668303138735127378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FlyingEnemy
   m_TagString: FlyingEnemy
   m_Icon: {fileID: 0}
@@ -29,14 +29,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4424869743569615304}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3282274781462238925}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &1670448493068862041
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -155,6 +155,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weapon
       objectReference: {fileID: 0}
+    - target: {fileID: 3253590607892546347, guid: e68e53cb66083f4409ef03eba56fc92f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4853506076887448958, guid: e68e53cb66083f4409ef03eba56fc92f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796343388769571836, guid: e68e53cb66083f4409ef03eba56fc92f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6182567217789630062, guid: e68e53cb66083f4409ef03eba56fc92f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -198,6 +210,18 @@ PrefabInstance:
     - target: {fileID: 6195432756394048011, guid: e68e53cb66083f4409ef03eba56fc92f, type: 3}
       propertyPath: weaponData.fireRate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6301358313201813615, guid: e68e53cb66083f4409ef03eba56fc92f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131643666521883039, guid: e68e53cb66083f4409ef03eba56fc92f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513165142973226677, guid: e68e53cb66083f4409ef03eba56fc92f, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
