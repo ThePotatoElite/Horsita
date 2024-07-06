@@ -43,10 +43,10 @@ public class SussitaManager : MonoBehaviour //MonoSingleton<SussitaManager>
         HandleInput();
         ManageVelocity();
     }
-    private void FixedUpdate()
-    {
-        sussitaRb.AddForce(Vector3.down * extraGravity);
-    }
+    //private void FixedUpdate()
+    //{
+    //    sussitaRb.AddForce(Vector3.down * extraGravity);
+    //}
     void HandleInput()
     {
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
