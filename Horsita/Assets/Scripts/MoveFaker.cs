@@ -9,6 +9,6 @@ public class MoveFaker : MonoBehaviour
 
     void Update()
     {
-        transform.position += Vector3.left * (SussitaManager.instance.GetCurrentSpeed() * distanceModifier + SussitaManager.instance.GetCurrentMomentum() * breakModifier) * Time.deltaTime;
+        transform.position += Vector3.left * (SussitaManager.instance.GetCurrentSpeed() * distanceModifier - SussitaManager.instance.GetCurrentMomentum() * breakModifier) * Time.deltaTime;
     }
 }

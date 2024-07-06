@@ -91,15 +91,16 @@ public class SussitaManager : MonoSingleton<SussitaManager>
         if (_isAccelerating && _velocity < _maxSpeed)
         {
             _velocity += (_maxSpeed / accelerationTime) * Time.deltaTime; // * AntiDrag;
+            _momentum = 0;
         }
         else if (_isBraking && _velocity > 0)
         {
-            _velocity -= (_maxSpeed / decelerationTime) * Time.deltaTime;
+            _velocity -= _momentum = (_maxSpeed / decelerationTime) * Time.deltaTime;
             //_momentum = _velocity*-1.3f;
         }
         else
         {
-            _velocity -= _velocity * .5f * Time.deltaTime; //normal drag/decay
+            _velocity -= _momentum = _velocity * .5f * Time.deltaTime; //normal drag/decay
         }
 
         _velocity = Mathf.Clamp(_velocity, 0, _maxSpeed);
