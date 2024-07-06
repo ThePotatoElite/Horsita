@@ -98,7 +98,7 @@ public class SussitaManager : MonoBehaviour
         }
         _velocity = Mathf.Clamp(_velocity, 0, _maxSpeed);
 
-        _momentum = (_velocity - previousVel) *-1f;
+        _momentum = (_velocity - previousVel);
 
         float velocityInMps = _velocity * 1000f / 3600f; // Convert velocity to m/s for Rigidbody
         Vector3 movement = transform.forward * velocityInMps;

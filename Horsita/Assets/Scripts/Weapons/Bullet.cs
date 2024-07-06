@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
         if (isPlayerBullet)
         {
             //hit enemies!
-            Enemy hit = collision.gameObject.GetComponent<Enemy>();
+            Enemy hit = collision.gameObject.GetComponentInParent<Enemy>();
             if (hit != null)
             {
                 hit.TakeDamage(damage);
